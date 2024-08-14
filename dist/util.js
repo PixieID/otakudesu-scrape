@@ -42,7 +42,7 @@ class OtakUtil {
         return {
             date: numDate ? parseInt(numDate) : 0,
             day: (day === 'None' && Number.isNaN(day) ? 'Random' : (day !== 'None' &&
-                !Number.isNaN(day) ? 'Maybe time: ' + (day === null || day === void 0 ? void 0 : day.toString()) :
+                !Number.isNaN(day) ? '' + (day === null || day === void 0 ? void 0 : day.toString()) :
                 exports.daysDefined[day === null || day === void 0 ? void 0 : day.toLowerCase()])),
             month,
         };

@@ -25,7 +25,7 @@ class OtakudesuInstance {
      * @description You can use this method for getting ongoing anime list.
      * @return {OngoingAnime[]}
      */
-    listOngoing() {
+    ongoing() {
         return (0, scraper_1.getOngoingList)(this.baseUrl);
     }
     /**
@@ -41,7 +41,7 @@ class OtakudesuInstance {
      * @param {String} anime - Fill this parameter with anime name. (Eg. Boruto)
      * @return {Anime[]}
      */
-    getAnime(anime) {
+    search(anime) {
         return (0, scraper_1.getAnime)(this.baseUrl, anime);
     }
     /**
@@ -49,22 +49,22 @@ class OtakudesuInstance {
      * @param {String} slugAnime - Fill this parameter with anime slug.
      * @return {ExtraAnime}
      */
-    getExtraAnime(slugAnime) {
-        return (0, scraper_1.getExtraAnime)(this.baseUrl, slugAnime);
+    detail(slugAnime) {
+        return (0, scraper_1.getExtraAnime)(slugAnime);
     }
     /**
      * @description You can use this method for getting otakudesu download(s) url.
      * @param {String} downloadUrl - Download URL (Episode URL)
      * @return {Download[]}
      */
-    getDownloadsByUrl(downloadUrl) {
+    download(downloadUrl) {
         return (0, scraper_1.getDownloads)(this.baseUrl, downloadUrl);
     }
     /**
      * @param {String} downloadUrl - Download URL
      * @return {PassThrough}
      */
-    getStream(downloadUrl) {
+    stream(downloadUrl) {
         return (0, scraper_1.getAnimeStream)(this.baseUrl, downloadUrl);
     }
 }
