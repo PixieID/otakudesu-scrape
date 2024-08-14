@@ -13,9 +13,9 @@ exports.getExtraAnime = void 0;
 const cheerio_1 = require("cheerio");
 const phin = require("phin");
 const constants_1 = require("../constants");
-const getExtraAnime = (requestUrl, slug) => __awaiter(void 0, void 0, void 0, function* () {
+const getExtraAnime = (slug) => __awaiter(void 0, void 0, void 0, function* () {
     const response = yield phin({
-        url: new URL((0, constants_1.getAnimeEndpoint)(slug), requestUrl),
+        url: new URL(slug),
     });
     if (response.statusCode < 200 && response.statusCode >= 300) {
         return undefined;
@@ -42,7 +42,7 @@ const getExtraAnime = (requestUrl, slug) => __awaiter(void 0, void 0, void 0, fu
         synopsis: $('.sinopc').text(),
         image: $('.fotoanime > img').attr('src'),
         name: slug,
-        url: new URL((0, constants_1.getAnimeEndpoint)(slug), requestUrl).href,
+        url: new URL(slug).href,
     };
 });
 exports.getExtraAnime = getExtraAnime;
